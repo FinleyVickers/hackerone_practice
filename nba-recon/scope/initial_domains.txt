@@ -1,0 +1,7 @@
+Main domains to examine:
+nba.com
+app.nba.com
+watch.nba.com
+tickets.nba.com
+store.nba.com
+api.nba.com

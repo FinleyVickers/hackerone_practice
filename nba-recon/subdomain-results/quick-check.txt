@@ -1,0 +1,12 @@
+HTTP/2 200 
+server: envoy
+
+HTTP/1.1 301 Moved Permanently
+Server: AkamaiGHost
+
+HTTP/2 403 
+
+HTTP/1.1 401 Unauthorized
+Server: AkamaiGHost
+
+

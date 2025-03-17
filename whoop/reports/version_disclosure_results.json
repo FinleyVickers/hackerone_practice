@@ -1,0 +1,43 @@
+{
+    "url": "https://www.whoop.com",
+    "timestamp": "2025-03-12T19:32:33.094518",
+    "versions": [
+        {
+            "component": "Generic Version",
+            "version": "3.6.5",
+            "file": "/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"
+        },
+        {
+            "component": "Generic Version",
+            "version": "18.3.0-canary-1cea38448-20230530",
+            "file": "/_next/static/chunks/bce60fc1-13549079f3adf78e.js"
+        },
+        {
+            "component": "Generic Version",
+            "version": "18.3.0-canary-1cea38448-20230530",
+            "file": "/_next/static/chunks/bce60fc1-13549079f3adf78e.js"
+        },
+        {
+            "component": "Generic Version",
+            "version": "18.3.0-canary-1cea38448-20230530",
+            "file": "/_next/static/chunks/bce60fc1-13549079f3adf78e.js"
+        },
+        {
+            "component": "Generic Version",
+            "version": "13.4.5",
+            "file": "/_next/static/chunks/488-b13262f05116134b.js"
+        },
+        {
+            "component": "Generic Version",
+            "version": "18.3.0-canary-1cea38448-20230530",
+            "file": "/_next/static/chunks/488-b13262f05116134b.js"
+        }
+    ],
+    "files_checked": [
+        "https://www.whoop.com/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js",
+        "https://www.whoop.com/_next/static/chunks/webpack-bb9ae63395c8ae44.js",
+        "https://www.whoop.com/_next/static/chunks/bce60fc1-13549079f3adf78e.js",
+        "https://www.whoop.com/_next/static/chunks/488-b13262f05116134b.js",
+        "https://www.whoop.com/_next/static/chunks/main-app-d1ca7e6bb8dc266c.js"
+    ]
+}
